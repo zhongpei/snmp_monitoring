@@ -1,3 +1,30 @@
+
+# install
+
+```
+cp env .env
+docker-compose up
+```
+
+
+### reset grafana password
+```
+docker exec -it <name of grafana container> grafana-cli admin reset-admin-password <fill in password
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### HP MIB download link
 * https://www.hpe.com/global/swpublishing/MTX-bff3e1f822e248398f713104c9
 * https://downloads.hpe.com/pub/softlib2/software1/pubsw-linux/p1580676047/v164863/upd11.30mib.tar.gz

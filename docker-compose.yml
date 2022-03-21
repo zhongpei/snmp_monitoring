@@ -26,6 +26,16 @@ services:
       - snmp_exporter_generator
     volumes:
       - "./snmp_exporter/snmp.yml:/etc/snmp_exporter/snmp.yml"
+  
+  influxdb:
+    image: influxdb:1.8-alpine
+    env_file: ./.env
+    ports:
+      - '8086:8086'
+    volumes:
+      - ./:/imports
+      - ./influxdb_data:/var/lib/influxdb
+
   prometheus:
     container_name: prometheus
     image: prom/prometheus
@@ -43,11 +53,12 @@ services:
     image: grafana/grafana
     user: "472"
     ports:
-      - "3000:3000"
+      - "13000:3000"
     depends_on:
       - prometheus
+      - influxdb
     env_file:
-      - ./grafana/config.monitoring
+      - ./.env
 
     volumes:
       - './grafana/provisioning/:/etc/grafana/provisioning/'
