@@ -1,6 +1,6 @@
-FROM python:3.4-slim
+FROM python:3.8-slim
 
-RUN pip install snmpsim
+RUN pip install snmpsim -i https://pypi.doubanio.com/simple
 
 RUN mkdir /data
 
