@@ -1,9 +1,11 @@
 
+
 # install
 
 ```
 cp env .env
-docker-compose up
+make
+docker-compose -f grafana-telegraf-compose.yml up
 ```
 
 
