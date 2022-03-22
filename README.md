@@ -14,11 +14,18 @@ docker exec -it <name of grafana container> grafana-cli admin reset-admin-passwo
 ```
 
 
+### add idrac dashborad
+
+https://github.com/ilovepancakes95/idrac_snmp-grafana
+
+install the following plugins:
+
+* clock(https://grafana.com/grafana/plugins/grafana-clock-panel)
+* statusmap(https://grafana.com/grafana/plugins/flant-statusmap-panel)
 
 
-
-
-
+Telegram
+net-snmp or snmp installed (snmptable and snmptranslate)
 
 
 
