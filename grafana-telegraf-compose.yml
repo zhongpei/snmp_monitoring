@@ -8,14 +8,15 @@ services:
     volumes:
       - ./:/imports
       - ./influxdb_data:/var/lib/influxdb
-
+    ports:
+      - "8060:8060"
 
   grafana:
     container_name: grafana
     image: grafana/grafana
     user: "472"
     ports:
-      - "13000:3000"
+      - "13001:3000"
     depends_on:
       - influxdb
     env_file:
